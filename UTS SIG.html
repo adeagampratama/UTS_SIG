@@ -1,0 +1,41 @@
+<!doctype html>
+	<head>
+		<style>
+			/* CSS comes here */
+			#mapid {
+                width: 100%;
+                height: 750px;
+            }
+		</style>
+		
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+		
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+		<title>Kontrakan</title>
+	</head>
+	<body>
+		<div id="mapid"></div>
+
+		<script type="text/javascript">
+            var mymap = L.map('mapid').setView([-5.381299, 105.294996], 15);
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+            // membuat dan menampilkan marker
+            var marker = L.marker([-5.381299, 105.294996]).addTo(mymap);
+            marker.bindPopup("<b>Kontrakan</b>.").openPopup();
+            var marker = L.marker([-5.381444, 105.294858]).addTo(mymap);
+            marker.bindPopup("<b>Daf Def</b>.");
+            var marker = L.marker([-5.360831, 105.315000]).addTo(mymap);
+            marker.bindPopup("<b>ITERA</b>.")
+            var marker = L.marker([-5.380738, 105.303226]).addTo(mymap);
+            marker.bindPopup("<b>UIN LAMPUNG</b>.")
+
+            // making a circle on area
+            var circle = L.circle([-5.381299, 105.294996], {
+	            color: 'red',
+	            fillColor: '#f03',
+	            fillOpacity: 0.5,
+	            radius: 3,
+            }).addTo(mymap);
+        </script>
+	</body>
+</html>
